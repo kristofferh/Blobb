@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--
+      ___         ___           ___           ___           ___     
+     /  /\       /  /\         /  /\         /__/\         /  /\    
+    /  /:/_     /  /::\       /  /:/         \  \:\       /  /:/_   
+   /  /:/ /\   /  /:/\:\     /  /:/           \  \:\     /  /:/ /\  
+  /  /:/ /:/  /  /:/  \:\   /  /:/  ___   ___  \  \:\   /  /:/ /::\ 
+ /__/:/ /:/  /__/:/ \__\:\ /__/:/  /  /\ /__/\  \__\:\ /__/:/ /:/\:\
+ \  \:\/:/   \  \:\ /  /:/ \  \:\ /  /:/ \  \:\ /  /:/ \  \:\/:/~/:/
+  \  \::/     \  \:\  /:/   \  \:\  /:/   \  \:\  /:/   \  \::/ /:/ 
+   \  \:\      \  \:\/:/     \  \:\/:/     \  \:\/:/     \__\/ /:/  
+    \  \:\      \  \::/       \  \::/       \  \::/        /__/:/   
+     \__\/       \__\/         \__\/         \__\/         \__\/    
+
+	Focus Tumblr Theme. by Kris Hedstrom.
+--> 
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>Focus Tumblr Theme</title>
+		<meta name="description" content="This is a Tumblr theme. It'll be cool">
+		<meta name="author" content="Kris">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<script src="assets/js/lib/modernizr.custom.19574.js"></script>
+		<link rel="stylesheet" href="assets/css/all.css">
+	</head>
+	<body class="infinite">
+		<div id="page">
+			<div id="container">
+				<aside id="panel">
+					<div id="ribbon">
+						<div class="search-field clearfix">
+							<form action="/search" method="get" id="search">
+								<input type="text" name="q" id="q" placeholder="{lang:Search}..." value="{SearchQuery}">
+							</form>
+						</div>
+					</div>
+					<nav class="secondary pages">
+						<ul>
+							<li>
+                                <a href="/archive" class="archive">{lang:Archive}</a>
+                            </li>
+							{block:AskEnabled}
+                                <li>
+                                    <a href="/ask" class="ask">{AskLabel}</a>
+                                </li>
+                            {/block:AskEnabled}
+                            {block:HasPages}
+                                {block:Pages}
+                                <li>
+                                    <a href="{URL}" class="page arrow">{Label}</a>
+                                </li>
+                                {/block:Pages}
+                            {/block:HasPages}
+                            {block:SubmissionsEnabled}
+                                <li>
+                                    <a href="/submit" class="submit">{SubmitLabel}</a>
+                                </li>
+                            {/block:SubmissionsEnabled}
+						</ul>
+					</nav>
+				</aside>
+
+				<div id="main-content">
+					<div class="scroll-container">
+						<a class="expand-panel"><span>+</span></a>
+					</div>
+					<div class="content">
+						<h1 style="background-image: url({PortraitURL-128})">
+							<a href="/"><span>{Title}</span></a>
+						</h1>
+						<header>
+							<nav class="type clearfix">
+								<p class="tagline">{Description}</p>
+								<ul>
+									<li class="grid" data-type="grid"><a href="#"><span></span></a></li>
+									<li class="list active" data-type="list"><a href="#"><span></span></a></li>
+								</ul>
+							</nav>
+						</header>
+						<ul id="posts" class="clearfix">
+							{block:Posts}
+							{block:Link}
+							<li class="post">
+								<article class="link">
+									<p><a {Target} href="{URL}" class="link">{Name}</a></p>
+									{block:Description}
+									<div class="description">
+										{Description}
+									</div>
+									{/block:Description}
+								</article>
+								<ul class="meta">
+									<li>Posted March 15, 2008</li>
+									<li></li>
+								</ul>
+							</li>
+							{/block:Link}
+							<!-- <li class="post">
+								<section class="media">
+									<div class="photo">
+										<div class="short-cuts">
+											<ul>
+												<li class="reblog">
+													<a href="#"><span></span></a>
+												</li>
+												<li class="like">
+													<a href=""><span></span></a>
+												</li>
+												<li class="permalink">
+													<a href=""><span></span></a>
+												</li>
+											</ul>
+										</div>
+										<img src="tmp/media/tired.jpg" alt="">
+									</div>
+								</section>
+								<ul class="meta">
+									<li>Aug 16, 2012 &middot; 1 Note &middot; 4,455 Comments</li>
+									<li class="tags clearfix">
+										<a href="/tagged/turd/">Turd</a>
+										<a href="/tagged/turd/">Song stuck in my head</a>
+										<a href="/tagged/turd/">A crazy loooooooooooooooooooooong tag long tag that should wrap</a>
+										
+									</li>
+								</ul>
+							</li> -->
+							{block:Photo}
+							<li class="post">
+								<section class="media photo">
+									<div class="short-cuts">
+										<ul>
+											<li class="reblog">
+												<a href="#"><span></span></a>
+											</li>
+											<li class="like">
+												<a href=""><span></span></a>
+											</li>
+											<li class="permalink">
+												<a href=""><span></span></a>
+											</li>
+										</ul>
+									</div>
+									<figure class="{block:HighRes}high-res{/block:HighRes}" data-photo-width="{PhotoWidth-HighRes}">
+	                                    <div class="photo-wrapper">
+	                                        <div class="photo-wrapper-inner">
+	                                            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}
+	                                        </div>
+	                                    </div>
+	                                    {block:Caption}
+	                                    <figcaption class="caption">
+	                                        {Caption}
+	                                    </figcaption>
+	                                    {/block:Caption}
+	                                </figure>
+								</section>
+								<ul class="meta">
+									<li>Posted March 15, 2008</li>
+									<li></li>
+								</ul>
+							</li>
+							{/block:Photo}
+							<!-- <li class="post">
+								<section class="media audio">
+									<div class="short-cuts">
+										<ul>
+											<li class="reblog">
+												<a href="#"><span></span></a>
+											</li>
+											<li class="like">
+												<a href=""><span></span></a>
+											</li>
+											<li class="permalink">
+												<a href=""><span></span></a>
+											</li>
+										</ul>
+									</div>
+									<iframe src="https://embed.spotify.com/?uri=spotify:track:0jCForLcQkZLs9dh3XK7eM&amp;view=coverart" frameborder="0" allowtransparency="true" style="width:700px;height:780px;"></iframe>
+								</section>
+								<article>
+									<p>Source <a href="#">Spotify</a></p>
+								</article>
+								<ul class="meta">
+									<li>Posted March 15, 2008</li>
+									<li></li>
+								</ul>
+							</li> -->
+							{block:Quote}                               
+							<li class="post">
+								<article class="quote">
+	                               <blockquote>
+	                                    <p>{Quote}</p>
+	                                </blockquote>
+	                                {block:Source}
+	                                <p class="source">{Source}</p>
+	                                {/block:Source}
+								</article>
+								<ul class="meta">
+									<li>Posted March 15, 2008</li>
+									<li></li>
+								</ul>
+							</li>
+							{/block:Quote}
+							{block:Text}
+							<li class="post">
+								<section class="media">
+									<div class="short-cuts">
+										<ul>
+											<li class="reblog">
+												<a href="#"><span></span></a>
+											</li>
+											<li class="like">
+												<a href=""><span></span></a>
+											</li>
+											<li class="permalink">
+												<a href=""><span></span></a>
+											</li>
+										</ul>
+									</div>
+								</section>
+								<article>
+									{block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+									{Body}
+								</article>
+								<ul class="meta">
+									<li>Posted March 15, 2012</li>
+									<li></li>
+								</ul>
+							</li>
+							{/block:Text}
+							{/block:Posts}
+						</ul>
+						<nav id="pagination" class="clearfix">
+							<ul>
+								<li id="previous"><a href="#">Previous</a></li>
+								<li id="next"><a href="index2.html">Next</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="custom-bg-wrapper">
+						<div class="custom-bg"></div>
+						<div class="default-bg"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="loader">
+			<div class="block"></div>
+			<div class="block"></div>
+			<div class="block"></div>
+			<div class="block"></div>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="assets/js/lib/jquery-1.7.2.min.js"%3E%3C/script%3E'));</script>
+		
+		<script src="assets/js/app-min.js"></script>
+		
+		<script type="text/javascript">
+		  // var _gaq = _gaq || [];
+		  // _gaq.push(['_setAccount', 'UA-XXXXX-XX']);
+		  // _gaq.push(['_trackPageview']);
+		  // (function() {
+		  //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		  //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		  //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  // })();
+		</script>
+	</body>
+</html>
