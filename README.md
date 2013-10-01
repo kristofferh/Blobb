@@ -1,4 +1,4 @@
-Focus
+Blobb
 =====
 
-Focus Tumblr Theme
+Blobb Tumblr Theme
